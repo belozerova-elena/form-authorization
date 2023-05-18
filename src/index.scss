@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+$openSans: 'Open Sans', sans-serif;
+// COLORS 
+$pink: #CB356B;
+$red: #BD3F32;
+$light: #eee;
+$white: #fff;
+$black: #222;
+$btn: #ff445c;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: $openSans;
+  font-size: 18px;
+  color: $black;
+  background: $pink;
+  background: linear-gradient(to right, $pink, $red);
+}
+p {
+  margin-top: 10px;
+  font-size: 12px;
+  color: $pink;
+}
+
+p::before {
+  display: inline;
+  content: "⚠ ";
+}
+.container {
+  width: 500px;
+  min-height: 420px;
+  padding: 30px;
+  background-color: $white;
+  border-radius: 20px;
+  &.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &.close {
+    display: none;
+  }
+}
+// Buttons
+.btn {
+  font-size: 18px;
+  color: $black;
+  background-color: $white;
+  border: none;
+  cursor: pointer;
+  &.active {
+    color: $btn;
+  }
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $btn;
+  &__sign-in {
+    margin-right: 40px;
+  }
+  &.close {
+    display: none;
+  }
+}
+// Form
+.form {
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  &__title {
+    margin-bottom: 10px;
+    font-size: 36px;  
+  }
+  &__input {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 15px;
+    background-color: $light;
+    border: none;
+    border-radius: 10px;
+    outline-color: $pink;
+  }
+  &.active {
+    display: flex;
+  }
+  &.close {
+    display: none;
+  }
+}
+.form-btn {
+  margin-top: 20px;
+  padding: 12px 45px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $btn;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.8;
+  }
+}
+
+.hello,
+.welcome {
+  display: none;
+  font-size: 40px;
+  &.active {
+    display: block;
+  }
+}
+.reload {
+  display: block;
+  margin-top: 20px;
+}
